@@ -1,0 +1,23 @@
+.FavouriteBtn-btn {
+  font-size: 28px;
+  font-weight: bold;
+  background-color: rgba(0, 166, 150, 0.83);
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.FavouriteBtn-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 141, 127, 0.83);
+}
+
+.FavouriteBtn-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  background-color: rgb(0, 65, 59);
+}

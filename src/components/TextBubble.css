@@ -1,0 +1,42 @@
+.TextBubble-div {
+  border: solid rgba(255, 255, 255, 0) 1px;
+  max-width: 100%;
+  max-height: 600px;
+  position: relative;
+  margin-bottom: 40px;
+}
+.TextBubble-text-div-current,
+.TextBubble-text-div-not-current {
+  background-color: grey;
+  padding: 2px 4px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  border-radius: 10px;
+  position: absolute;
+  top: 40px;
+}
+.TextBubble-text-div-current {
+  right: 0;
+}
+.TextBubble-text-div-not-current {
+  left: 0;
+}
+.TextBubble-text {
+  max-width: 330px;
+  font-size: 18px;
+  word-wrap: break-word;
+  text-align: start;
+  margin: 0;
+}
+.TextBubble-sender-not-current {
+  text-align: start;
+  border: rgba(255, 0, 0, 0) solid 1px;
+}
+.TextBubble-sender-current {
+  text-align: end;
+  border: rgba(255, 0, 0, 0) solid 1px;
+}
+.TextBubble-time {
+  text-align: start;
+}

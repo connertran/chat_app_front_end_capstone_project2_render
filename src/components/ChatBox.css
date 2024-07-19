@@ -1,0 +1,107 @@
+.ChatBox-chat-box {
+  border: white solid 3px;
+  border-radius: 20px;
+  width: 650px;
+  height: 700px;
+  position: relative;
+}
+.ChatBox-all-messages {
+  padding-top: 0;
+  height: 570px;
+  overflow: scroll;
+}
+.ChatBox-all-messages::-webkit-scrollbar {
+  width: 6px;
+  height: 0px;
+}
+
+.ChatBox-all-messages::-webkit-scrollbar-thumb {
+  background-color: rgba(200, 200, 200, 0.145);
+  border-radius: 10px;
+}
+
+.ChatBox-all-messages::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(200, 200, 200, 0.4);
+}
+.ChatBox-receiver-name {
+  background-color: rgba(108, 106, 106, 0.429);
+  width: 100%;
+  border-radius: 16px 16px 0 0;
+}
+
+.ChatBox-receiver-name p {
+  margin-top: 0;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-bottom: 0;
+}
+
+.ChatBox-form {
+  display: flex;
+  flex-direction: rows;
+  position: absolute;
+  bottom: 0;
+}
+.ChatBox-form-textarea {
+  height: 40px;
+  width: 400px;
+  font-size: 20px;
+  margin-left: 10px;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-left: 5px;
+  background-color: rgba(121, 117, 117, 0.51);
+}
+.ChatBox-form-textarea:focus {
+  background-color: rgba(121, 117, 117, 0.751);
+}
+.ChatBox-send-btn {
+  margin-left: 8px;
+  font-weight: bold;
+  font-size: 20px;
+  border: none;
+  background-color: rgb(6, 57, 210);
+  border-radius: 10px;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+}
+
+.ChatBox-send-btn:hover {
+  background-color: rgb(28, 75, 219);
+}
+
+.ChatBox-send-btn:active {
+  background-color: rgb(54, 97, 226);
+}
+.ChatBox-emoji-btn,
+.ChatBox-info-btn {
+  background-color: rgba(98, 97, 97, 0);
+  border: none;
+  margin-left: 10px;
+}
+.ChatBox-emoji,
+.ChatBox-info {
+  font-size: 40px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.ChatBox-emoji:hover,
+.ChatBox-info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+.ChatBox-emoji-picker-container {
+  position: relative;
+
+  width: 60px;
+  height: 45px;
+}
+
+.ChatBox-emoji-picker {
+  position: absolute;
+  bottom: 500px;
+  right: 280px;
+  z-index: 1000;
+}

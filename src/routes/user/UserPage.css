@@ -1,0 +1,92 @@
+.UserPage-h1 {
+  font-size: 50px;
+}
+.UserPage-personal-info-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.UserPage-info-span {
+  font-size: 30px;
+  font-weight: bold;
+}
+.UserPage-info {
+  font-size: 28px;
+  margin-bottom: 0px;
+}
+.UserPage-edit-delete-div {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.UserPage-edit-btn {
+  font-size: 28px;
+  font-weight: bold;
+  background-color: rgb(0, 147, 79);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  margin-right: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+.UserPage-edit-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  background-color: rgb(0, 177, 94);
+}
+
+.UserPage-edit-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  background-color: rgb(0, 137, 74);
+}
+
+.UserPage-delete-btn {
+  font-size: 28px;
+  font-weight: bold;
+  background-color: rgba(243, 28, 28, 0.83);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.UserPage-delete-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  background-color: rgba(243, 58, 58, 0.83);
+}
+
+.UserPage-delete-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  background-color: rgba(213, 28, 28, 0.83);
+}
+
+.UserPage-chat-btn {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color: rgba(0, 120, 108, 0.83);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.UserPage-chat-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 141, 127, 0.83);
+}
+
+.UserPage-chat-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 195, 175, 0.83);
+}

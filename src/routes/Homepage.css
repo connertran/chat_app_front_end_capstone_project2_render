@@ -1,0 +1,105 @@
+@keyframes shine {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.Homepage-h1 {
+  font-size: 3em;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200%;
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 12s linear reverse infinite;
+}
+
+.Homepage-login-link,
+.Homepage-signup-link {
+  font-size: 50px;
+  border: solid 2px #646cff;
+  padding: 20px 40px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease, border 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.Homepage-login-link:hover,
+.Homepage-signup-link:hover {
+  background-color: white;
+  border: solid 2px white;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.Homepage-login-link {
+  margin-left: 10px;
+}
+
+.Homepage-signup-link {
+  margin-right: 10px;
+}
+.Homepage-h1-loged-in {
+  font-size: 4em;
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.Homepage-blinker {
+  animation: blink 3.5s linear infinite;
+}
+
+.Homepage-chat-btn,
+.Homepage-favourite-btn {
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  height: 200px;
+  width: 300px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+}
+
+.Homepage-chat-btn:hover,
+.Homepage-favourite-btn:hover {
+  background-color: #646cff;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.Homepage-chat-btn {
+  margin-left: 10px;
+}
+
+.Homepage-favourite-btn {
+  margin-right: 10px;
+}

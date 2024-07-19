@@ -1,0 +1,14 @@
+.ChatHomePage-h1 {
+  font-size: 4em;
+}
+.ChatHomePage-contact-chat-div {
+  display: flex;
+  flex-direction: rows;
+}
+
+.ChatHomePage-empty {
+  border: white solid 3px;
+  border-radius: 20px;
+  width: 650px;
+  height: 700px;
+}

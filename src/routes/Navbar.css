@@ -1,0 +1,34 @@
+.Navbar-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.Navbar-signup,
+.Navbar-login,
+.Navbar-profile {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.Navbar-signup,
+.Navbar-profile {
+  margin-left: 5px;
+  margin-right: 10px;
+}
+.Navbar-home {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.Navbar-signup:hover,
+.Navbar-login:hover,
+.Navbar-home:hover,
+.Navbar-profile:hover {
+  color: blue;
+  text-decoration: underline;
+}

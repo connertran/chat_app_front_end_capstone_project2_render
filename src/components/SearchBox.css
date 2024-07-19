@@ -1,0 +1,27 @@
+.SearchBox-error {
+  color: red;
+  font-size: 20px;
+}
+.SearchBox-form-input {
+  width: 400px;
+  height: 50px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 25px;
+  background-color: rgba(121, 117, 117, 0.51);
+  font-size: 20px;
+  margin-bottom: 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+.SearchBox-form-input:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.SearchBox-form-input:focus {
+  background-color: rgba(121, 117, 117, 0);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}

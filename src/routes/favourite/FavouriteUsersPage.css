@@ -1,0 +1,14 @@
+.FavouriteUserPage-h1 {
+  font-size: 4em;
+}
+.FavouriteUserPage-contact-chat-div {
+  display: flex;
+  flex-direction: rows;
+}
+
+.FavouriteUserPage-empty {
+  border: white solid 3px;
+  border-radius: 20px;
+  width: 650px;
+  height: 700px;
+}

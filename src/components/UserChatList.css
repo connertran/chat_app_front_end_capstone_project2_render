@@ -1,0 +1,29 @@
+.UserChatList-div {
+  border: solid rgba(255, 255, 255, 0.5) 3px;
+  border-radius: 10px;
+  margin-right: 20px;
+  height: 700px;
+  padding: 0 6px;
+  overflow: scroll;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.UserChatList-div:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.6);
+}
+
+.UserChatList-div::-webkit-scrollbar {
+  width: 6px;
+  height: 0px;
+}
+
+.UserChatList-div::-webkit-scrollbar-thumb {
+  background-color: rgba(200, 200, 200, 0.145);
+  border-radius: 10px;
+}
+
+.UserChatList-div::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(200, 200, 200, 0.4);
+}

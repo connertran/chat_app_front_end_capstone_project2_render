@@ -1,0 +1,65 @@
+.SignUpForm-h1 {
+  font-size: 50px;
+}
+.SignUpForm-form-container {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  max-height: 700px;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid #cccccc74;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.SignUpForm-form-label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.SignUpForm-form-input {
+  margin-bottom: 15px;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: rgba(121, 117, 117, 0.51);
+  cursor: pointer;
+}
+
+.SignUpForm-form-input:focus {
+  background-color: rgba(121, 117, 117, 0.751);
+}
+.SignUpForm-submit-btn {
+  padding: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 3px;
+  border: none;
+  border-radius: 10px;
+  background-color: #007bff;
+  color: #fff;
+  margin-top: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.SignUpForm-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.SignUpForm-submit-btn:active {
+  transform: translateY(-2px);
+  background-color: #3a94f5;
+  border: none;
+}
+
+.SignUpForm-error {
+  color: red;
+  font-size: 20px;
+}
