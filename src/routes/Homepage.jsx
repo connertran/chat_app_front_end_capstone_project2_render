@@ -23,7 +23,7 @@ function Homepage() {
       {!loggedInStatus && (
         <>
           <div>
-            <h1 className="Homepage-h1">Welcome to the Chat App!</h1>
+            <h1 className="Homepage-h1">Welcome to the Chat App!!</h1>
           </div>
           <Link className="Homepage-signup-link" to="/signup">
             Sign Up
