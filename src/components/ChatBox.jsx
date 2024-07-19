@@ -15,7 +15,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 library.add(faFaceSmile, faFaceRollingEyes, faUser);
 
-let socket = io("http://localhost:8000");
+let socket = io(process.env.REACT_APP_BASE_URL || "http://localhost:8000");
 
 function ChatBox({ username, currentUserId, conversation, chatInProfilePage }) {
   const navigate = useNavigate();
