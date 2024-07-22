@@ -15,7 +15,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 library.add(faFaceSmile, faFaceRollingEyes, faUser);
 
-const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+// const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+const BASE_URL = "https://chat-app-back-end-capstone-project2.onrender.com";
 let socket = io(BASE_URL);
 
 function ChatBox({ username, currentUserId, conversation, chatInProfilePage }) {
