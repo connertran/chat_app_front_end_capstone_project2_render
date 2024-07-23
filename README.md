@@ -13,11 +13,11 @@ I have broken down the Marvel App Project into easy-to-follow steps. Here’s a 
 
 ### All the tables created for the backend include:
 
-![Database schema](./backend/db_data/database_schema.png)
+![Database schema](./database_schema.png)
 
 ### Tables utilized by the front-end include:
 
-![Database schema for the front end](./backend/db_data/database_schema_front_end.png)
+![Database schema for the front end](./database_schema_front_end.png)
 
 ## Overview
 
