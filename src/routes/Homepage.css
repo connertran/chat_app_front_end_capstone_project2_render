@@ -103,3 +103,29 @@
 .Homepage-favourite-btn {
   margin-right: 10px;
 }
+
+@media (max-width: 390px) {
+  /* logged in */
+  .Homepage-h1-loged-in {
+    font-size: 3em;
+  }
+  .Homepage-chat-btn,
+  .Homepage-favourite-btn {
+    height: 100px;
+    width: 150px;
+    font-size: 30px;
+  }
+
+  /* not logged in */
+  .Homepage-h1 {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+  }
+  .Homepage-login-link,
+  .Homepage-signup-link {
+    height: 200px;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

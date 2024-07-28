@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { getTokenFromLocalStorage } from "../../helpers/localStorage";
+import FavouriteSearchBox from "../../components/FavouriteSearchBox";
 import "./FavouriteUsersPage.css";
 
 function FavouriteUsersPage() {
@@ -23,8 +24,9 @@ function FavouriteUsersPage() {
   };
   const [person, setPerson] = useState(initialState);
   return (
-    <>
+    <div className="FavouriteUserPage-div">
       <h1 className="FavouriteUserPage-h1">Primary List</h1>
+      <FavouriteSearchBox setPerson={setPerson} />
       <div className="FavouriteUserPage-contact-chat-div">
         <UserFavouriteList setPerson={setPerson} />
         {person.username === "" ? (
@@ -32,7 +34,7 @@ function FavouriteUsersPage() {
         ) : null}
         <IndividualChat username={person.username} />
       </div>
-    </>
+    </div>
   );
 }
 export default FavouriteUsersPage;

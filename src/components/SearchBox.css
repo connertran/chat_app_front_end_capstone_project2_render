@@ -25,3 +25,9 @@
   transform: translateY(-5px) scale(1.02);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
 }
+
+@media (max-width: 390px) {
+  .SearchBox-form-input {
+    width: 300px;
+  }
+}

@@ -1,0 +1,28 @@
+.ProfileDetails-personal-info-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.ProfileDetails-info-span {
+  font-size: 30px;
+  font-weight: bold;
+}
+.ProfileDetails-info {
+  font-size: 28px;
+  margin-bottom: 0px;
+}
+
+@media (max-width: 390px) {
+  .ProfileDetails-personal-info-div {
+    margin-bottom: 20px;
+    margin-left: 10px;
+  }
+  .ProfileDetails-info-span {
+    font-size: 28px;
+  }
+  .ProfileDetails-info {
+    font-size: 26px;
+    width: 100%;
+    text-align: left;
+  }
+}

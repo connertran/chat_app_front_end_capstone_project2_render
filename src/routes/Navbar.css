@@ -10,17 +10,17 @@
 .Navbar-signup,
 .Navbar-login,
 .Navbar-profile {
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: bold;
 }
 
 .Navbar-signup,
 .Navbar-profile {
-  margin-left: 5px;
+  margin-left: 10px;
   margin-right: 10px;
 }
 .Navbar-home {
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: bold;
   margin-left: 10px;
 }
@@ -31,4 +31,15 @@
 .Navbar-profile:hover {
   color: blue;
   text-decoration: underline;
+}
+
+@media (max-width: 390px) {
+  .Navbar-home {
+    font-size: 1.8em;
+  }
+  .Navbar-signup,
+  .Navbar-login,
+  .Navbar-profile {
+    font-size: 1.8em;
+  }
 }

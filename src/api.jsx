@@ -106,12 +106,23 @@ class ChatApi {
     return res.favourite;
   }
 
+  // Helper method to get user IDs
+  static async getUserIds(usernames) {
+    const userIds = await Promise.all(
+      usernames.map(async (username) => {
+        const user = await ChatApi.getUser(username);
+        return user.id;
+      })
+    );
+    return userIds;
+  }
+
   // add a user to the favourite list
   static async addUserToFavouriteList(user, addedUser) {
-    const currentUserObj = await ChatApi.getUser(user);
-    const addedUserObj = await ChatApi.getUser(addedUser);
-    const currentUserId = currentUserObj.id;
-    const addedUserId = addedUserObj.id;
+    const [currentUserId, addedUserId] = await ChatApi.getUserIds([
+      user,
+      addedUser,
+    ]);
     let res = await this.request(
       `favourite/`,
       { sender: currentUserId, receiver: addedUserId },
@@ -122,10 +133,10 @@ class ChatApi {
 
   // remove a user from the favourite list
   static async removeUserFromFavouriteList(user, addedUser) {
-    const currentUserObj = await ChatApi.getUser(user);
-    const addedUserObj = await ChatApi.getUser(addedUser);
-    const currentUserId = currentUserObj.id;
-    const addedUserId = addedUserObj.id;
+    const [currentUserId, addedUserId] = await ChatApi.getUserIds([
+      user,
+      addedUser,
+    ]);
     let res = await this.request(
       `favourite/`,
       { sender: currentUserId, receiver: addedUserId },

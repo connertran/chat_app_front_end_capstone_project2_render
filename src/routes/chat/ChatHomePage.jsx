@@ -22,7 +22,7 @@ function ChatHomePage() {
   };
   const [person, setPerson] = useState(initialState);
   return (
-    <>
+    <div className="ChatHomePage-div">
       <h1 className="ChatHomePage-h1">General List</h1>
 
       <SearchBox setPerson={setPerson} />
@@ -33,7 +33,7 @@ function ChatHomePage() {
         ) : null}
         <IndividualChat username={person.username} />
       </div>
-    </>
+    </div>
   );
 }
 export default ChatHomePage;

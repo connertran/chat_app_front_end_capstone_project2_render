@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
 import ChatApi from "../api";
 import "./SearchBox.css";
-function SearchBox({ setPerson }) {
+import { getTokenFromLocalStorage } from "../helpers/localStorage";
+function FavouriteSearchBox({ setPerson }) {
   const initialState = {
     searchUsername: "",
   };
   const [formData, setFormData] = useState(initialState);
   const [error, setError] = useState(null);
+  const [currentUser, setCurrentUser] = useState("");
+  useEffect(() => {
+    setCurrentUser(getTokenFromLocalStorage().username);
+  }, []);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((formData) => ({
@@ -17,15 +22,23 @@ function SearchBox({ setPerson }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await ChatApi.getUser(formData.searchUsername);
-      console.log(res);
-      setError(null);
-      setPerson((person) => ({
-        ...person,
-        username: res.username,
-      }));
+      const favoriteUsers = await ChatApi.getAllFavouriteUsers(currentUser);
+      const favUserSearchObj = await ChatApi.getUser(formData.searchUsername);
+      const favUserId = favUserSearchObj.id;
+      const isUserFavorite = favoriteUsers.some(
+        (user) => user.receiver === favUserId
+      );
+      if (isUserFavorite) {
+        setError(null);
+        setPerson((person) => ({
+          ...person,
+          username: formData.searchUsername,
+        }));
+      } else {
+        setError("This user isn't in your favourite list.");
+      }
     } catch (e) {
-      setError("User doesn't exist");
+      setError("This username doesn't exist");
     }
   };
   return (
@@ -51,4 +64,4 @@ function SearchBox({ setPerson }) {
   );
 }
 
-export default SearchBox;
+export default FavouriteSearchBox;

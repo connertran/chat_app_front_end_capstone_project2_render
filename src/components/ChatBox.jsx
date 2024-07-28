@@ -15,6 +15,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 library.add(faFaceSmile, faFaceRollingEyes, faUser);
 
+// const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
 const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:8000";
 let socket = io(BASE_URL);
 
@@ -205,7 +206,11 @@ function ChatBox({ username, currentUserId, conversation, chatInProfilePage }) {
   }
 
   return (
-    <div className="ChatBox-chat-box">
+    <div
+      className={`ChatBox-chat-box ${
+        chatInProfilePage ? "ChatBox-chat-box-small" : ""
+      }`}
+    >
       <div className="ChatBox-receiver-name">
         <p>{username}</p>
       </div>
@@ -216,7 +221,9 @@ function ChatBox({ username, currentUserId, conversation, chatInProfilePage }) {
       </div>
       <form className="ChatBox-form" onSubmit={handleSubmit}>
         <textarea
-          className="ChatBox-form-textarea"
+          className={`ChatBox-form-textarea ${
+            chatInProfilePage ? "ChatBox-form-textarea-long" : ""
+          }`}
           id="mess"
           type="text"
           name="mess"

@@ -58,9 +58,11 @@ function SignUpForm() {
       <h1 className="SignUpForm-h1">New Account</h1>
       {error && (
         <>
-          <p>Invalid data!</p>
-          <p>Make sure the data is in the correct format.</p>
-          <p>{error}</p>
+          <p className="SignUpForm-error">Invalid data!</p>
+          <p className="SignUpForm-error">
+            Make sure the data is in the correct format.
+          </p>
+          <p className="SignUpForm-error">{error}</p>
         </>
       )}
       <form className="SignUpForm-form-container" onSubmit={handleSubmit}>

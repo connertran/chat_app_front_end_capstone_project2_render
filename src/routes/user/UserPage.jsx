@@ -6,6 +6,8 @@ import { useSelector, useDispatch } from "react-redux";
 import IndividualChat from "../../components/IndividualChat";
 import FavouriteBtn from "../../components/FavouriteBtn";
 import "./UserPage.css";
+import UserProfileBtn from "../../components/UserProfileBtn";
+import ProfileDetails from "../../components/ProfileDetails";
 
 function UserPage() {
   const dispatch = useDispatch();
@@ -117,11 +119,21 @@ function UserPage() {
   return (
     <>
       {deleteMessage && (
-        <>
-          <p>Are you sure you want to delete your account?</p>
-          <button onClick={handleDelete}>Yes</button>
-          <button onClick={handleDeleteWarningCancel}>No</button>
-        </>
+        <div className="UserPage-delete-mess-div">
+          <p className="UserPage-delete-mess">
+            Are you sure you want to delete your account?
+          </p>
+          <UserProfileBtn
+            title={"Yes"}
+            className={"UserPage-delete-mess-yes"}
+            onClickFunction={handleDelete}
+          />
+          <UserProfileBtn
+            title={"No"}
+            className={"UserPage-delete-mess-no"}
+            onClickFunction={handleDeleteWarningCancel}
+          />
+        </div>
       )}
       <h1 className="UserPage-h1">User Profile</h1>
       {communicated && (
@@ -133,34 +145,26 @@ function UserPage() {
           />
         </>
       )}
-      <div className="UserPage-personal-info-div">
-        <p className="UserPage-info">
-          <span className="UserPage-info-span">Name:</span> {userInfo.firstName}{" "}
-          {userInfo.lastName}
-        </p>
-        <p className="UserPage-info">
-          <span className="UserPage-info-span">Username:</span>{" "}
-          {userInfo.username}
-        </p>
-        <p className="UserPage-info">
-          <span className="UserPage-info-span">Gmail Address:</span>{" "}
-          {userInfo.gmailAddress}
-        </p>
-        <p className="UserPage-info">
-          <span className="UserPage-info-span">Bio:</span> {userInfo.bio}
-        </p>
-        <p className="UserPage-info">
-          <span className="UserPage-info-span">User's role:</span> {role}
-        </p>
-      </div>
+      <ProfileDetails
+        firstName={userInfo.firstName}
+        lastName={userInfo.lastName}
+        username={userInfo.username}
+        gmailAddress={userInfo.gmailAddress}
+        bio={userInfo.bio}
+        role={role}
+      />
       {showBtn && (
         <div className="UserPage-edit-delete-div">
-          <button className="UserPage-edit-btn" onClick={handleEditBtn}>
-            Edit
-          </button>
-          <button className="UserPage-delete-btn" onClick={handleDeleteWarning}>
-            Delete Profile
-          </button>
+          <UserProfileBtn
+            title={"Edit"}
+            className={"UserPage-edit-btn"}
+            onClickFunction={handleEditBtn}
+          />
+          <UserProfileBtn
+            title={"Delete Profile"}
+            className={"UserPage-delete-btn"}
+            onClickFunction={handleDeleteWarning}
+          />
         </div>
       )}
 

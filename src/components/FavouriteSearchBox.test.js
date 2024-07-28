@@ -1,12 +1,12 @@
-import "../../setupTests";
+import "../setupTests";
 import { render, waitFor } from "@testing-library/react";
-import FavouriteUsersPage from "./FavouriteUsersPage";
+import FavouriteSearchBox from "./FavouriteSearchBox";
 import "@testing-library/jest-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import rootReducer from "../../../Redux/rootReducer";
+import rootReducer from "../../Redux/rootReducer";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-import ChatApi from "../../api";
+import ChatApi from "../api";
 import { act } from "react";
 
 let store;
@@ -27,7 +27,7 @@ afterEach(() => {
 });
 
 // Smoke test
-test("Favourite users page renders without crashing", () => {
+test("Favourite search box renders without crashing", () => {
   localStorage.setItem(
     "authToken",
     JSON.stringify({ username: "testuser", token: "fakeToken" })
@@ -35,19 +35,19 @@ test("Favourite users page renders without crashing", () => {
   render(
     <Provider store={store}>
       <Router>
-        <FavouriteUsersPage />
+        <FavouriteSearchBox />
       </Router>
     </Provider>
   );
 });
 
 // Test form submission and API call
-jest.mock("../../api", () => ({
+jest.mock("../api", () => ({
   getUser: jest.fn(),
 }));
 
 // Snapshot test
-test("Favourite users matches snapshot", async () => {
+test("Favourite search box matches snapshot", async () => {
   store.dispatch({
     type: "LOGIN",
     payload: {
@@ -66,19 +66,19 @@ test("Favourite users matches snapshot", async () => {
     JSON.stringify({ username: "testuser", token: "fakeToken" })
   );
 
-  let getByText, asFragment;
+  let asFragment, getByPlaceholderText;
   await act(async () => {
-    ({ asFragment, getByText } = render(
+    ({ asFragment, getByPlaceholderText } = render(
       <Provider store={store}>
         <Router>
-          <FavouriteUsersPage />
+          <FavouriteSearchBox />
         </Router>
       </Provider>
     ));
   });
 
   await waitFor(() => {
-    expect(getByText(/Primary List/i)).toBeInTheDocument();
+    expect(getByPlaceholderText(/Search User/i)).toBeInTheDocument();
     expect(asFragment()).toMatchSnapshot();
   });
 });

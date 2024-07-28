@@ -63,3 +63,13 @@
   color: red;
   font-size: 20px;
 }
+
+@media (max-width: 390px) {
+  .LoginForm-h1 {
+    font-size: 40px;
+  }
+  .LoginForm-form-container {
+    width: 280px;
+    max-height: 700px;
+  }
+}

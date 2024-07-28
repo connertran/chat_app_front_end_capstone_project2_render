@@ -46,7 +46,7 @@ const Navbar = () => {
         <div>
           <Logout dispatch={dispatch} />
           <Link className="Navbar-profile" to={`users/${username}`}>
-            My Profile
+            {currentUser}
           </Link>
         </div>
       )}
