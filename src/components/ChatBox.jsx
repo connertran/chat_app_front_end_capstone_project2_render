@@ -15,8 +15,18 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 library.add(faFaceSmile, faFaceRollingEyes, faUser);
 
-const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:8000";
-let socket = io(BASE_URL);
+const BACKEND_URL =
+  process.env.NODE_ENV === "production"
+    ? "import.meta.env.VITE_BASE_URL"
+    : "http://localhost:8000";
+
+let socket = io(BACKEND_URL, {
+  withCredentials: true,
+  transports: ["websocket", "polling"],
+  reconnection: true,
+  reconnectionAttempts: 5,
+  reconnectionDelay: 1000,
+});
 
 function ChatBox({ username, currentUserId, conversation, chatInProfilePage }) {
   const navigate = useNavigate();
