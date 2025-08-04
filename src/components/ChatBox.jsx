@@ -17,7 +17,7 @@ library.add(faFaceSmile, faFaceRollingEyes, faUser);
 
 const BACKEND_URL =
   process.env.NODE_ENV === "production"
-    ? "import.meta.env.VITE_BASE_URL"
+    ? import.meta.env.VITE_BASE_URL
     : "http://localhost:8000";
 
 let socket = io(BACKEND_URL, {
