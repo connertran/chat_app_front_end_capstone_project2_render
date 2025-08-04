@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:8000";
+// the first one is for vercel deployment production, the second one is for local development
+const BASE_URL =
+  "https://chat-app-back-end-five.vercel.app" || "http://localhost:8000";
 
 class ChatApi {
   static token;
