@@ -83,7 +83,7 @@ However, due to the complexity of the Google API, I decided to exclude the Googl
 9. To see how the whole application works (front-end and back-end), open a web browser and go to `http://localhost:5173/`.
 10. If you want to deploy this app to Vercel, add this ENV variables
 
-- REACT_APP_BASE_URL
+- VITE_BASE_URL
 
 ## Testing
 
