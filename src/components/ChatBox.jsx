@@ -24,12 +24,16 @@ const BACKEND_URL =
 let socket = io(BACKEND_URL, {
   withCredentials: true,
   transports: ["polling", "websocket"],
-  path: "/socket.io", // Remove trailing slash
+  path: "/socket.io",
   reconnection: true,
   reconnectionAttempts: 5,
   reconnectionDelay: 1000,
   autoConnect: true,
   forceNew: true,
+  extraHeaders: {
+    "Access-Control-Allow-Origin":
+      "https://chat-app-front-end-pi-green.vercel.app",
+  },
 });
 
 function ChatBox({ username, currentUserId, conversation, chatInProfilePage }) {
