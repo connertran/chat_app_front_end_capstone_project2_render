@@ -22,14 +22,16 @@ const BACKEND_URL =
     : "http://localhost:8000";
 
 let socket = io(BACKEND_URL, {
-  withCredentials: true,
-  transports: ["polling", "websocket"],
+  withCredentials: false, // Change to false since we're having CORS issues
+  transports: ["websocket", "polling"], // Try websocket first
   path: "/socket.io",
   reconnection: true,
   reconnectionAttempts: 5,
   reconnectionDelay: 1000,
   autoConnect: true,
   forceNew: true,
+  secure: true,
+  rejectUnauthorized: false,
 });
 
 function ChatBox({ username, currentUserId, conversation, chatInProfilePage }) {
