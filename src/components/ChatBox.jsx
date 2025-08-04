@@ -24,7 +24,7 @@ const BACKEND_URL =
 let socket = io(BACKEND_URL, {
   withCredentials: true,
   transports: ["polling", "websocket"],
-  path: "/socket.io/",
+  path: "/socket.io", // Remove trailing slash
   reconnection: true,
   reconnectionAttempts: 5,
   reconnectionDelay: 1000,
