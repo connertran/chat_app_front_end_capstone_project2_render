@@ -15,14 +15,16 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 library.add(faFaceSmile, faFaceRollingEyes, faUser);
 
+// the first one is for vercel deployment production, the second one is for local development
 const BACKEND_URL =
   process.env.NODE_ENV === "production"
-    ? import.meta.env.VITE_BASE_URL
+    ? "https://chat-app-back-end-five.vercel.app"
     : "http://localhost:8000";
 
 let socket = io(BACKEND_URL, {
   withCredentials: true,
   transports: ["websocket", "polling"],
+  path: "/socket.io/",
   reconnection: true,
   reconnectionAttempts: 5,
   reconnectionDelay: 1000,
