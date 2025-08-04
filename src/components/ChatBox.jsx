@@ -30,10 +30,6 @@ let socket = io(BACKEND_URL, {
   reconnectionDelay: 1000,
   autoConnect: true,
   forceNew: true,
-  extraHeaders: {
-    "Access-Control-Allow-Origin":
-      "https://chat-app-front-end-pi-green.vercel.app",
-  },
 });
 
 function ChatBox({ username, currentUserId, conversation, chatInProfilePage }) {
