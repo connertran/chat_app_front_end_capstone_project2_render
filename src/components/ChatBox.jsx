@@ -23,11 +23,13 @@ const BACKEND_URL =
 
 let socket = io(BACKEND_URL, {
   withCredentials: true,
-  transports: ["websocket", "polling"],
+  transports: ["polling", "websocket"],
   path: "/socket.io/",
   reconnection: true,
   reconnectionAttempts: 5,
   reconnectionDelay: 1000,
+  autoConnect: true,
+  forceNew: true,
 });
 
 function ChatBox({ username, currentUserId, conversation, chatInProfilePage }) {
