@@ -15,24 +15,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 library.add(faFaceSmile, faFaceRollingEyes, faUser);
 
-// the first one is for vercel deployment production, the second one is for local development
-const BACKEND_URL =
-  process.env.NODE_ENV === "production"
-    ? "https://chat-app-back-end-five.vercel.app"
-    : "http://localhost:8000";
-
-let socket = io(BACKEND_URL, {
-  withCredentials: false, // Change to false since we're having CORS issues
-  transports: ["websocket", "polling"], // Try websocket first
-  path: "/socket.io",
-  reconnection: true,
-  reconnectionAttempts: 5,
-  reconnectionDelay: 1000,
-  autoConnect: true,
-  forceNew: true,
-  secure: true,
-  rejectUnauthorized: false,
-});
+// const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:8000";
+let socket = io(BASE_URL);
 
 function ChatBox({ username, currentUserId, conversation, chatInProfilePage }) {
   const navigate = useNavigate();

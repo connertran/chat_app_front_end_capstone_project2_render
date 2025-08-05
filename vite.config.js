@@ -9,17 +9,5 @@ export default defineConfig(({ mode }) => {
       "process.env": process.env,
     },
     plugins: [react()],
-    build: {
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            vendor: ["react", "react-dom", "react-router-dom"],
-            redux: ["redux", "react-redux", "@reduxjs/toolkit"],
-            socket: ["socket.io-client"],
-          },
-        },
-      },
-      chunkSizeWarningLimit: 1000,
-    },
   };
 });

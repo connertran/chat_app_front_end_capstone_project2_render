@@ -1,10 +1,7 @@
 import axios from "axios";
 
-// the first one is for vercel deployment production, the second one is for local development
-const BASE_URL =
-  process.env.NODE_ENV === "production"
-    ? "https://chat-app-back-end-five.vercel.app"
-    : "http://localhost:8000";
+// const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:8000";
+const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:8000";
 
 class ChatApi {
   static token;
